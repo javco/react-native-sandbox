@@ -11,9 +11,9 @@ import {
   View
 } from 'react-native';
 
-import Component1 from './app/components/Component1/Component1';
+import HelloWorld from './app/components/HelloWorld/HelloWorld';
 
-export default class reactnativehw extends Component {
+export default class sandbox extends Component {
   render() {
     return (
       <View>
@@ -22,10 +22,10 @@ export default class reactnativehw extends Component {
           Hello World!
         </Text>
         */}
-        <Component1 />
+        <HelloWorld />
       </View>
     );
   }
 }
 
-AppRegistry.registerComponent('reactnativehw', () => reactnativehw)
+AppRegistry.registerComponent('sandbox', () => sandbox)

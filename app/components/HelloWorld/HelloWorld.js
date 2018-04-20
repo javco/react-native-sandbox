@@ -5,16 +5,16 @@ import {
   View
 } from 'react-native';
 
-export default class Component1 extends Component {
+export default class HelloWorld extends Component {
   render() {
     return (
       <View>
         <Text>
-          This is Component 1!
+          Hello Component, welcome to the world!
         </Text>
       </View>
     );
   }
 }
 
-AppRegistry.registerComponent('Component1', () => Component1)
+AppRegistry.registerComponent('HelloWorld', () => HelloWorld)
