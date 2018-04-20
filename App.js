@@ -22,7 +22,7 @@ export default class sandbox extends Component {
           Hello World!
         </Text>
         */}
-        <HelloWorld />
+        <HelloWorld message="Hello Component, welcome to the world! XX" />
       </View>
     );
   }

@@ -10,7 +10,7 @@ export default class HelloWorld extends Component {
     return (
       <View>
         <Text>
-          Hello Component, welcome to the world!
+          {this.props.message}
         </Text>
       </View>
     );
