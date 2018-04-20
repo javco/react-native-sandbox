@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Text,
-  View
+  View,
+  StyleSheet
 } from 'react-native';
 
 export default class HelloWorld extends Component {
@@ -24,13 +25,13 @@ export default class HelloWorld extends Component {
   render() {
     let fullName = 'Author: ' + this.state.name + ' ' +  this.state.surname
     fullName = this.state.showName ? fullName : '' 
-
+    
     return (
-      <View>
-        <Text>
+      <View style={{backgroundColor: '#3d3d3d', height: '100%'}}>
+        <Text style={{color: 'white'}}>
           {this.state.message}
         </Text>
-        <Text>
+        <Text style={{color: 'white'}}>
           {fullName}
         </Text>
       </View>
