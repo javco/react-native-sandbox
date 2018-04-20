@@ -6,14 +6,21 @@ import {
 } from 'react-native';
 
 export default class HelloWorld extends Component {
-  constructor(){
-   super();
+  
+  constructor(props){
+   super(props);
    this.state = {
      name: 'John',
      surname: 'Doe',
-     showName: false
+     showName: true,
+     message: this.props.message
    } 
   }
+
+  static defaultProps = {
+    message: 'Hi there',
+  }
+
   render() {
     let fullName = 'Author: ' + this.state.name + ' ' +  this.state.surname
     fullName = this.state.showName ? fullName : '' 
@@ -21,7 +28,7 @@ export default class HelloWorld extends Component {
     return (
       <View>
         <Text>
-          {this.props.message}
+          {this.state.message}
         </Text>
         <Text>
           {fullName}
