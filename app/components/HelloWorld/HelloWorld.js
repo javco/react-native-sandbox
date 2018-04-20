@@ -27,16 +27,27 @@ export default class HelloWorld extends Component {
     fullName = this.state.showName ? fullName : '' 
     
     return (
-      <View style={{backgroundColor: '#3d3d3d', height: '100%'}}>
-        <Text style={{color: 'white'}}>
+      <View style={styles.myView}>
+        <Text style={styles.myText}>
           {this.state.message}
         </Text>
-        <Text style={{color: 'white'}}>
+        <Text style={styles.myText}>
           {fullName}
         </Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  myView: {
+    backgroundColor: '#3d3d3d',
+    height: '100%',
+    padding: 20
+  },
+  myText: {
+    color: 'white'
+  }
+})
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld)
