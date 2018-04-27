@@ -6,7 +6,8 @@ import {
   StyleSheet,
   TouchableHighlight,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  Switch
 } from 'react-native';
 
 export default class HelloWorld extends Component {
@@ -19,6 +20,7 @@ export default class HelloWorld extends Component {
      showName: true,
      message: this.props.message,
      textValue: 'Hello InputText',
+     switchValue: true,
    } 
   }
 
@@ -43,6 +45,12 @@ export default class HelloWorld extends Component {
 
   onSubmit1(){
     console.log('Input submitted')
+  }
+
+  changeSwitchValue(value){
+    this.setState({
+      switchValue: value,
+    });
   }
 
   render() {
@@ -94,6 +102,14 @@ export default class HelloWorld extends Component {
         <Text style={styles.myText}>
           {this.state.textValue}
         </Text>
+        <View>
+          <Text style={styles.myText}>
+            Switch Input
+          </Text>
+          <Switch
+            value={this.state.switchValue}
+            onValueChange={ (value) => this.changeSwitchValue(value) } />
+        </View>
       </View>
     );
   }
