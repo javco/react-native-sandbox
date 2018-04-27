@@ -3,7 +3,9 @@ import {
   AppRegistry,
   Text,
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 
 export default class HelloWorld extends Component {
@@ -22,6 +24,14 @@ export default class HelloWorld extends Component {
     message: 'Hi there',
   }
 
+  onPress = () => {
+    console.log('Box 1 clicked');
+  }
+
+  onPress2(){
+    console.log('Box 2 clicked');
+  }
+
   render() {
     let fullName = 'Author: ' + this.state.name + ' ' +  this.state.surname
     fullName = this.state.showName ? fullName : '' 
@@ -35,16 +45,22 @@ export default class HelloWorld extends Component {
           {fullName}
         </Text>
         <View style={styles.containerv1}>
-          <View style={styles.box1}>
+          <TouchableHighlight 
+            style={styles.box1} 
+            onPress={this.onPress}
+            underlayColor="blue" >
             <Text style={styles.myText}>
               Box 1
             </Text>
-          </View>
-          <View style={styles.box2}>
+          </TouchableHighlight>
+          <TouchableOpacity 
+            style={styles.box2}
+            onPress={this.onPress2}
+           >
             <Text style={styles.myText}>
               Box 2
             </Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.box3}>
             <Text style={styles.myText}>
               Box 3
