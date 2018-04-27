@@ -5,7 +5,8 @@ import {
   View,
   StyleSheet,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput
 } from 'react-native';
 
 export default class HelloWorld extends Component {
@@ -16,7 +17,8 @@ export default class HelloWorld extends Component {
      name: 'John',
      surname: 'Doe',
      showName: true,
-     message: this.props.message
+     message: this.props.message,
+     textValue: 'Hello InputText',
    } 
   }
 
@@ -30,6 +32,13 @@ export default class HelloWorld extends Component {
 
   onPress2(){
     console.log('Box 2 clicked');
+  }
+
+  changeTexValue(value){
+    //this.state.textValue = value;
+    this.setState({
+      textValue: value,
+    });
   }
 
   render() {
@@ -67,6 +76,19 @@ export default class HelloWorld extends Component {
             </Text>
           </View>
         </View>
+        <Text style={styles.myText}>
+          Text Input
+        </Text>
+        <View>
+          <TextInput 
+            placeholder="Enter Text" 
+            value={this.state.textValue} 
+            onChangeText={ (value) => this.changeTexValue(value) }
+            />
+        </View>
+        <Text style={styles.myText}>
+          {this.state.textValue}
+        </Text>
       </View>
     );
   }
