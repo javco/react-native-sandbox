@@ -41,6 +41,10 @@ export default class HelloWorld extends Component {
     });
   }
 
+  onSubmit1(){
+    console.log('Input submitted')
+  }
+
   render() {
     let fullName = 'Author: ' + this.state.name + ' ' +  this.state.surname
     fullName = this.state.showName ? fullName : '' 
@@ -84,6 +88,7 @@ export default class HelloWorld extends Component {
             placeholder="Enter Text" 
             value={this.state.textValue} 
             onChangeText={ (value) => this.changeTexValue(value) }
+            onSubmitEditing={this.onSubmit1}
             />
         </View>
         <Text style={styles.myText}>
