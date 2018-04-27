@@ -15,8 +15,8 @@ export default class MoviesList extends Component {
    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
    this.state = {
     moviesDataSource: ds.cloneWithRows(movies),
-   
    }
+   
   }
 
   renderRow(movie, sectionId, rowId, highlightRow){
