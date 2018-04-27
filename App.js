@@ -8,21 +8,38 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Text,
-  View
+  View,
 } from 'react-native';
 
-//import HelloWorld from './app/components/HelloWorld/HelloWorld';
-//import MoviesList from './app/components/MoviesList/MoviesList';
-import ListFetched from './app/components/ListFetched/ListFetched';
+import {
+  StackNavigator
+} from 'react-navigation';
+
+import HomeScreen from './app/components/Navigator/HomeScreen';
+import DetailsScreen from './app/components/Navigator/DetailsScreen';
 
 export default class sandbox extends Component {
+
   render() {
-    return (
-      <View>
-        <ListFetched />
-      </View>
-    );
+    return <RootStack />;
   }
 }
 
+const RootStack = StackNavigator({
+  Home: {
+    screen: HomeScreen,
+  },
+  Details: {
+    screen: DetailsScreen,
+  },
+},
+{
+  initialRouteName: 'Home',
+}
+);
 AppRegistry.registerComponent('sandbox', () => sandbox)
+
+
+// a scene is a view, a page, a component... whatever you want to call it
+
+// route: to attach parameters to our routes

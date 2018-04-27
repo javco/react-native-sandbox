@@ -4,6 +4,7 @@ import {
   Text,
   View,
   ListView,
+  TouchableHighlight,
   StyleSheet,
 } from 'react-native';
 
@@ -33,11 +34,17 @@ export default class ListFetched extends Component {
       });
   }
 
+  onPress(post){
+    console.log(post)
+  }
+
   renderRow(post, sectionId, rowId, highlightRow){
     return(
-      <View style={styles.row}>
-        <Text style={styles.itemTitle} >{post.title}</Text>
-      </View>
+      <TouchableHighlight onPress={ () => {this.onPress(post)} }>
+        <View style={styles.row}>
+          <Text style={styles.itemTitle} >{post.title}</Text>
+        </View>
+      </TouchableHighlight>
     )
   }
 
