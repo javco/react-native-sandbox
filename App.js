@@ -11,18 +11,14 @@ import {
   View
 } from 'react-native';
 
-import HelloWorld from './app/components/HelloWorld/HelloWorld';
+//import HelloWorld from './app/components/HelloWorld/HelloWorld';
+import MoviesList from './app/components/MoviesList/MoviesList';
 
 export default class sandbox extends Component {
   render() {
     return (
       <View>
-        {/*}
-        <Text>
-          Hello World!
-        </Text>
-        */}
-        <HelloWorld message="HelloWorld App!!" />
+        <MoviesList />
       </View>
     );
   }
