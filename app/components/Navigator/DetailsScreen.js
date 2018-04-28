@@ -31,6 +31,11 @@ export default class DetailsScreen extends Component {
     const { params } = navigation.state;
     return {
       title: params ? params.otherParam : 'A Nested Details Screen',
+      headerStyle: styles.headerStyle,
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     }
   };
 
@@ -60,6 +65,9 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center'
+  },
+  headerStyle: {
+    backgroundColor: 'green',
   }
 })
 
