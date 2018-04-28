@@ -12,6 +12,26 @@ import {
 } from 'react-navigation';
 
 
+class CustomHeader extends Component {
+  
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <View style={styles.centerHeader}>
+        <Text>back</Text>
+        <Text>Custom Header</Text>
+        <Button
+          title="Menu"
+        />
+      </View>
+    );
+  }
+}
+
+
 export default class HomeScreen extends Component {
   
   constructor(props){
@@ -19,7 +39,7 @@ export default class HomeScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Home',
+    headerTitle: <CustomHeader />,
   };
 
   render() {
@@ -42,6 +62,13 @@ export default class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  centerHeader: {
+    padding: 5,
+    flex: 1, 
+    flexDirection: 'row',
+    alignItems: 'center', 
+    justifyContent: 'space-between'
+  },
   centerView: {
     flex: 1, 
     alignItems: 'center', 
