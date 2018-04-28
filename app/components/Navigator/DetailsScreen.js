@@ -47,7 +47,7 @@ export default class DetailsScreen extends Component {
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
         <Button
           title="Go back"
-          onPress={() => this.props.navigation.goBack()}
+          onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
         />
       </View>
     );
