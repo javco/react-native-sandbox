@@ -31,11 +31,6 @@ export default class DetailsScreen extends Component {
     const { params } = navigation.state;
     return {
       title: params ? params.otherParam : 'A Nested Details Screen',
-      headerStyle: styles.headerStyle,
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
     }
   };
 
@@ -51,8 +46,12 @@ export default class DetailsScreen extends Component {
         <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
         <Button
-          title="Go back"
+          title="Update!"
           onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
+        />
+        <Button
+          title="Go Back!"
+          onPress={() => this.props.navigation.goBack()}
         />
       </View>
     );
@@ -66,9 +65,6 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
-  headerStyle: {
-    backgroundColor: 'green',
-  }
 })
 
 AppRegistry.registerComponent('DetailsScreen', () => DetailsScreen)
