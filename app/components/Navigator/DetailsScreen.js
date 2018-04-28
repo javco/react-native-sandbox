@@ -14,6 +14,10 @@ export default class DetailsScreen extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Details',
+  };
+
   render() {
     /* 2. Read the params from the navigation state */
     const { params } = this.props.navigation.state;

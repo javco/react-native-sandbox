@@ -18,8 +18,11 @@ export default class HomeScreen extends Component {
     super(props);
   }
 
-  render() {
+  static navigationOptions = {
+    title: 'Home',
+  };
 
+  render() {
     return (
       <View style={styles.centerView}>
         <Text>Home Screen</Text>
