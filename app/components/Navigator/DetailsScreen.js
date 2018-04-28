@@ -16,7 +16,7 @@ export default class DetailsScreen extends Component {
   render() {
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.centerView}>
         <Text>Details Screen</Text>
       </View>
     );
@@ -25,6 +25,11 @@ export default class DetailsScreen extends Component {
 
 
 const styles = StyleSheet.create({
+  centerView: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center'
+  }
 })
 
 AppRegistry.registerComponent('DetailsScreen', () => DetailsScreen)

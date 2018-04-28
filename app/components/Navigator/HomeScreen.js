@@ -21,7 +21,7 @@ export default class HomeScreen extends Component {
   render() {
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.centerView}>
         <Text>Home Screen</Text>
         <Button
           title="Go to Details"
@@ -33,6 +33,11 @@ export default class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  centerView: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center'
+  }
 })
 
 AppRegistry.registerComponent('HomeScreen', () => HomeScreen)
