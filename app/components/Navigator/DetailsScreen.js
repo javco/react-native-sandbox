@@ -14,8 +14,24 @@ export default class DetailsScreen extends Component {
     super(props);
   }
 
-  static navigationOptions = {
-    title: 'Details',
+  /**
+   * In order to use params in the title, we need to make navigationOptions 
+   * a function that returns a configuration object. It might be tempting to 
+   * try to use this.props inside of navigationOptions, but because it is a 
+   * static property of the component, this does not refer to an instance of 
+   * the component and therefore no props are available. Instead, if we make 
+   * navigationOptions a function then React Navigation will call it with an 
+   * object containing { navigation, navigationOptions, screenProps } -- in 
+   * this case, all we care about is navigation, which is the same object that
+   *  is passed to your screen props as this.props.navigation. You may recall
+   *  that we can get the params from navigation through navigation.state.params,
+   *  and so we do this below to extract a param and use it as a title.
+   */
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    return {
+      title: params ? params.otherParam : 'A Nested Details Screen',
+    }
   };
 
   render() {
