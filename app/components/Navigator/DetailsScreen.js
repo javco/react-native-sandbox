@@ -45,14 +45,18 @@ export default class DetailsScreen extends Component {
         <Text>Details Screen</Text>
         <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-        <Button
-          title="Update!"
-          onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
-        />
-        <Button
-          title="Go Back!"
-          onPress={() => this.props.navigation.goBack()}
-        />
+        <View style={styles.btnContainer}>
+          <Button
+            title="Update!"
+            onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
+          />
+        </View>
+        <View style={styles.btnContainer}>
+          <Button
+            title="Go Back!"
+            onPress={() => this.props.navigation.goBack()}
+          />
+        </View>
       </View>
     );
   }
@@ -65,6 +69,9 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  btnContainer: {
+    paddingTop: 20,
+  }
 })
 
 AppRegistry.registerComponent('DetailsScreen', () => DetailsScreen)

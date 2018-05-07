@@ -46,16 +46,18 @@ export default class HomeScreen extends Component {
     return (
       <View style={styles.centerView}>
         <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          /* 1. Navigate to the Details route with params */
-          onPress={() => {
-            this.props.navigation.navigate('Details', {
-              itemId: 86,
-              otherParam: 'anything you want here',
-            });
-          }}
-        />
+        <View style={styles.btnContainer}>
+          <Button
+            title="Go to Details"
+            /* 1. Navigate to the Details route with params */
+            onPress={() => {
+              this.props.navigation.navigate('Details', {
+                itemId: 86,
+                otherParam: 'anything you want here',
+              });
+            }}
+          />
+        </View>
       </View>
     );
   }
@@ -73,6 +75,9 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center'
+  },
+  btnContainer: {
+    paddingTop: 20,
   }
 })
 
