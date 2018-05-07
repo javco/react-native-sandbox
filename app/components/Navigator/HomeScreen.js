@@ -48,13 +48,21 @@ export default class HomeScreen extends Component {
         <Text>Home Screen</Text>
         <View style={styles.btnContainer}>
           <Button
-            title="Go to Details"
+            title="Go to Details!"
             /* 1. Navigate to the Details route with params */
             onPress={() => {
               this.props.navigation.navigate('Details', {
                 itemId: 86,
                 otherParam: 'anything you want here',
               });
+            }}
+          />
+        </View>
+        <View style={styles.btnContainer}>
+          <Button
+            title="Go to Video!"
+            onPress={() => {
+              this.props.navigation.navigate('Video');
             }}
           />
         </View>

@@ -17,6 +17,7 @@ import {
 
 import HomeScreen from './app/components/Navigator/HomeScreen';
 import DetailsScreen from './app/components/Navigator/DetailsScreen';
+import VideoScreen from './app/components/Navigator/VideoScreen';
 
 export default class sandbox extends Component {
 
@@ -31,6 +32,9 @@ const RootStack = StackNavigator({
   },
   Details: {
     screen: DetailsScreen,
+  },
+  Video: {
+    screen: VideoScreen,
   },
 },
 {
