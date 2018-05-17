@@ -66,6 +66,14 @@ export default class HomeScreen extends Component {
             }}
           />
         </View>
+        <View style={styles.btnContainer}>
+          <Button
+            title="Go to WebView!"
+            onPress={() => {
+              this.props.navigation.navigate('WebView');
+            }}
+          />
+        </View>
       </View>
     );
   }

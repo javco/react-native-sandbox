@@ -18,6 +18,7 @@ import {
 import HomeScreen from './app/components/Navigator/HomeScreen';
 import DetailsScreen from './app/components/Navigator/DetailsScreen';
 import VideoScreen from './app/components/Navigator/VideoScreen';
+import WebViewScreen from './app/components/Navigator/WebViewScreen';
 
 export default class sandbox extends Component {
 
@@ -35,6 +36,9 @@ const RootStack = StackNavigator({
   },
   Video: {
     screen: VideoScreen,
+  },
+  WebView: {
+    screen: WebViewScreen,
   },
 },
 {
